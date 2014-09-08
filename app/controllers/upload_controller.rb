@@ -1,4 +1,6 @@
 class UploadController < ApplicationController
+  include UploadHelper
+
   def new
 
   end
@@ -13,6 +15,7 @@ class UploadController < ApplicationController
       end
       @notice = 'Uploaded successfully'
       @file_name = file_name
+      read_xls file_path
     rescue Exception => e
       puts e
       puts e.backtrace
