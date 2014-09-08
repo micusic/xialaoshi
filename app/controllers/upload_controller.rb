@@ -13,7 +13,9 @@ class UploadController < ApplicationController
       end
       @notice = 'Uploaded successfully'
       @file_name = file_name
-    rescue
+    rescue Exception => e
+      puts e
+      puts e.backtrace
       render :new
     end
   end
