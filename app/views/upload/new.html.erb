@@ -1,0 +1,6 @@
+<p>请选择上传文件:</p>
+<%= form_tag({action: :upload}, multipart: true) do %>
+    <%= file_field_tag 'path' %>
+    <p></p>
+    <%= submit_tag("上传") %>
+<% end %>
